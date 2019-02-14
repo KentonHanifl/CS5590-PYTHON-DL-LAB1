@@ -1,8 +1,47 @@
 '''
+DOCUMENTATION:
+
+Please note that many methods in the classes should ONLY be called by BookingManager
+
+Neither Person nor ThingOnPlane should ever be instantiated. They do not function with the BookingManger.
+
+===
 To use the manager:
+
 First, instantiate BookingManager.
 This will automatically create some flights when it is instantiated
 
+First, check b.printAllFlights() to see what flights are available
+You can then assign a flight to an instance of Passenger (p) by calling:
+b.bookFlight(p,b.flights[<flightnum>]
+You can cancel a flight for a passenger in the same way.
+
+You can create a flight for the BookingManager by first instantiating a flight.
+Ideally the data types for flight are:
+
+flightnum = int
+start = str
+destination = str
+takeoffdatetime = str
+plane = Plane
+(A plane simply takes a name for whatever model you want. This can be a string or anything else.)
+baseprice = int
+
+but these are not checked and are not required.
+
+Then call: b.createFlights(<flight>) (you can pass a list of flights if you want to)
+
+Other functions should be fairly self explanatory
+
+===
+To instantiate a Passenger:
+A name and age are required, but a list of luggage and a location are optional.
+Location is only present to show inheritance from ThingOnPlane
+
+the luggage list should be a list consisting ONLY of class Luggage.
+A Luggage is only used for calculating prices for flights and
+is just instantiated with a name for the luggage to keep track of it.
+Location is optional and is only present to show inheritance from ThingOnPlane
 '''
 
 
@@ -24,7 +63,7 @@ class Flight:
         self.baseprice = baseprice
 
     def __str__(self):
-        return "flight {0} on a {1} from {2} to {3} at {4}. {5} passengers booked so far.".format(self.flightnum,self.plane,self.start,self.destination,self.time,self.getNumPassengers())
+        return "flight {0} on a {1} from {2} to {3} at {4}.\n {5} passengers booked so far. Base price: ${6}".format(self.flightnum,self.plane,self.start,self.destination,self.time,self.getNumPassengers(),self.baseprice)
 
     def assignPassenger(self,passenger):
         self.__passengers.append(passenger)
