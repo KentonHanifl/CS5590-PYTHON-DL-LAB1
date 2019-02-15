@@ -22,5 +22,6 @@ def longestNonRepeatingSubstring(s):
                 longestSubString = currentSubString
     return longestSubString
 
-s = longestNonRepeatingSubstring("pwwkew")
+inpStr = input("Input a string")
+s = longestNonRepeatingSubstring(inpStr)
 print(s,len(s))

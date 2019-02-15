@@ -11,8 +11,22 @@ while cont:
         students = input("Enter student names for web application with spaces between the names\n").split(" ")
         webappStudents.update(students)
     elif choice[0]=="3":
-        print(pythonStudents & webappStudents) #the set union between are the students in common
+        if len(pythonStudents)==0 and len(webappStudents)==0:
+            print("both lists empty!")
+        elif len(pythonStudents)==0:
+            print("python students list empty!")
+        elif len(webappStudents)==0:
+            print("webapp students list empty!")
+        else:
+            print(pythonStudents & webappStudents) #the set union between are the students in common
     elif choice[0]=="4":
-        print(pythonStudents ^ webappStudents) #the set difference is the students not in common
+        if len(pythonStudents)==0 and len(webappStudents)==0:
+            print("both lists empty!")
+        elif len(pythonStudents)==0:
+            print("python students list empty!")
+        elif len(webappStudents)==0:
+            print("webapp students list empty!")
+        else:
+            print(pythonStudents ^ webappStudents) #the set difference is the students not in common
     else:
         cont = False
