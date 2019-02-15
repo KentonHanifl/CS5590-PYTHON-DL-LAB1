@@ -1,6 +1,8 @@
 '''
 DOCUMENTATION:
 
+To use the manager fully, run the program and enter commands in the shell.
+
 Please note that many methods in the classes should ONLY be called by BookingManager
 
 Neither Person nor ThingOnPlane should ever be instantiated. They do not function with the BookingManger.
@@ -8,7 +10,7 @@ Neither Person nor ThingOnPlane should ever be instantiated. They do not functio
 ===
 To use the manager:
 
-First, instantiate BookingManager.
+First, instantiate BookingManager. ( b = BookingManager() )
 This will automatically create some flights when it is instantiated
 
 First, check b.printAllFlights() to see what flights are available
@@ -199,7 +201,8 @@ def testClasses():
     newThing = ThingOnPlane("somewhere")
     print(newThing.getLocation())
 
-inp = input("Enter y to test all of the classes or read the start of the python file to run it yourself").lower()
+
+
+inp = input("Enter y to test all of the classes or you can also read the start of Question5.py to run the manager in full yourself").lower()
 if inp == 'y':
     testClasses()
-    
